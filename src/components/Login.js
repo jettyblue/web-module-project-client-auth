@@ -27,7 +27,7 @@ const Login = () => {
             })
     }
 
-    return(
+    return (
         <>
             <form className="loginForm">
                 <h2>Login</h2>
