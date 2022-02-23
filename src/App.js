@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
 import './App.css';
 import Login from './components/Login';
@@ -20,17 +20,12 @@ function App() {
           <Link className="link" to="/logout">Logout</Link>
         </header>
 
-        <Route exact path="/">
-          <Login />
-        </Route>
-
-        <Route exact path="/login">
-          <Redirect to="/" />
-        </Route>
-
-        <PrivateRoute exact path="/friends" component={FriendsList} />
-        <PrivateRoute exact path="/friends/add" component={AddFriend} />
-        <PrivateRoute exact path="/logout" component={Logout} />
+        <Switch>
+          <Route path='/' component={Login} />
+          <PrivateRoute path="/friends" component={FriendsList} />
+          <PrivateRoute path="/friends/add" component={AddFriend} />
+          <PrivateRoute path="/logout" component={Logout} />
+        </Switch>
       </div>
     </Router>
   );

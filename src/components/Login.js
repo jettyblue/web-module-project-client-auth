@@ -20,6 +20,7 @@ const Login = () => {
         axios.post('http://localhost:9000/api/login', values)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
+                localStorage.setItem('username', res.data.username)
                 push('/friends');
             })
             .catch(err => {
@@ -31,15 +32,22 @@ const Login = () => {
         <>
             <form className="loginForm">
                 <h2>Login</h2>
+                <label>Username</label>
+                <br></br>
                 <input
                     id='username'
                     onChange={handleChange}
+                    value={values.username}
                     name='username'
                     placeholder='Enter username'
                 />
+                <br></br>
+                <label>Password</label>
+                <br></br>
                 <input
                     id='password'
                     onChange={handleChange}
+                    value={values.password}
                     name='password'
                     type='password'
                     placeholder='Enter password'

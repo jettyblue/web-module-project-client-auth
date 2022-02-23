@@ -17,11 +17,12 @@ const AddFriend = () => {
     const handleSubmit = evt => {
         evt.preventDefault();
         const token = localStorage.getItem('token');
-        axios.post('http://localhost:9000/api/friends', form, {
-            headers: { authorization: token }
+        axiosWithAuth()
+            .post('/friends', form, {
+                headers: { authorization: token }
         })
         .then(res => {
-            push('/friends')
+            push.apply('/friends')
         })
         .catch(err => {
             console.error(err);
