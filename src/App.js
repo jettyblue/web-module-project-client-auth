@@ -14,10 +14,10 @@ function App() {
       <div className="App">
         <header>
           <h2>Friends Database</h2>
-          <Link className="link" to="/login">Login</Link>
-          <Link className="link" to="/friends">Friends List</Link>
-          <Link className="link" to="/friends/add">Add Friends</Link>
-          <Link className="link" to="/logout">Logout</Link>
+          <Link className="link" to="/login">LOGIN</Link>
+          <Link className="link" to="/friends">FRIENDS LIST</Link>
+          <Link className="link" to="/friends/add">ADD FRIENDS</Link>
+          <Link className="link" to="/logout">LOGOUT</Link>
         </header>
 
         <Switch>
